@@ -1,0 +1,339 @@
+Delivered-To: ngovanuc.1508@gmail.com
+Received: by 2002:a8a:e0a:0:b0:4ea:97ba:54e6 with SMTP id n10csp1408669ocw;
+        Thu, 6 Jul 2023 20:29:57 -0700 (PDT)
+X-Received: by 2002:a9d:4b89:0:b0:6b4:26c5:7eab with SMTP id k9-20020a9d4b89000000b006b426c57eabmr3217712otf.2.1688700597685;
+        Thu, 06 Jul 2023 20:29:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1688700597; cv=none;
+        d=google.com; s=arc-20160816;
+        b=u057a5LRpMNsmiXEAxzVq0nQjUqO5K4Lrnysu/Jz5PUxat1NzDzvC2b2VGFJ1I9VSD
+         koPJbEhEs0N46VFbpFx856eO0qV109dJ9gOYqL2FqtZYXZQnqSRXWBkcqSo5NHhJyCBy
+         DFRtufwFn+CMV/HZFJrlNoTsKTQkubi6OJWjKl0yyB1tM+rsd+NnSebf6f6OfF+8iw69
+         ROfJ1AqS0i16IF9wAkJfYJRmvvXry/0RjiGI3R0Q2fGChAY9c1kUb6dWa4Hzf/CIx2rz
+         lpis4p67knx1QQ+5iNTemu08tlW0M1tp28ZT5Uj4DWi2bXUcnOEWqvFdLToMVEpL1+Fw
+         vpsQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=AWUayFXwqYZf6jydkLtrzJVcuGKqIx/0NkSGZtOtycg=;
+        fh=CrkgN8qRuHapz54BAkZlH78j6nhPCN/SfMcmD1FjRw8=;
+        b=hpWhSJ72LjiGUjg1V/1g2NpqYImFakiFReMxBzm+6F5kOZaOUEtvUpCB1RE5lgRXVD
+         uqpM/6k5yKhv2kjfqEG32akEy1DHa8kuu0zLb8YviKodn8jU33t57JjSRO71xlQTreag
+         WKyyqVIUsKaDRC3xO7B4oO4Yn/lAwuWpWwtjmkaAZrteHGQZNg4OP1923jFyxg+tkIhC
+         X2pAarJVOm6g8qlwMGwwQs+8tkulVa/hbY9tkEUdb6iscjzp9hGeAR072VHQkUG5Yobs
+         rE0HknLKqh/8GH4W4m7oJNU5fLEA2vMQ4SG2NAtXNfNiP0hr/BCMQmwXYCkxuB2E7Pq9
+         LYGw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@vku.udn.vn header.s=google header.b=JgaHeqqV;
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of nqvu@vku.udn.vn) smtp.mailfrom=nqvu@vku.udn.vn
+Return-Path: <nqvu@vku.udn.vn>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id p19-20020a9d4e13000000b006b7361c21e6sor1164611otf.14.2023.07.06.20.29.56
+        for <ngovanuc.1508@gmail.com>
+        (Google Transport Security);
+        Thu, 06 Jul 2023 20:29:56 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of nqvu@vku.udn.vn) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@vku.udn.vn header.s=google header.b=JgaHeqqV;
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of nqvu@vku.udn.vn) smtp.mailfrom=nqvu@vku.udn.vn
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=vku.udn.vn; s=google; t=1688700596; x=1691292596;
+        h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=AWUayFXwqYZf6jydkLtrzJVcuGKqIx/0NkSGZtOtycg=;
+        b=JgaHeqqVvbXv2k8/hYx5hZdZeFmdCq6Wgbrf04FPpBfK0/+TxpMoj5jENWyxGe3Z28
+         I4l2gerYdsyGGKycvWWi39yHCjoshiHxZHSGBqcsJCLqOah9EM9laAm/c4qLBIIw5Y3Y
+         JeqhHSHNY+5O7ZbkncMcJDSAV4GDrCSxO2E6aUWIF2Ok4EQAkdsjnj2zBuIfoLLN1GtL
+         muB6SBcIU6zy/e1f0Cco6cLXaCBfYqRNC1gjuZEkbh5BxMEYkHS/PAdsnGSLJNjSZWwl
+         2dJapO7OpD6+wXjVhKc9RfeW5ibbZrk3TIiNuxAcn9PCWsq32Qh9Vp1/4qEfWOSJYh2t
+         LnaQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1688700596; x=1691292596;
+        h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=AWUayFXwqYZf6jydkLtrzJVcuGKqIx/0NkSGZtOtycg=;
+        b=iYitGWjoWKealRN6jzkuDIFeSfjm1qxJ1/AErVV1mFyFdxOXt/8lWctv7l1/LqMzr1
+         tSHFt7n8TT/erGwIZB3OT6BHeFML0yxIpByg09CI6tATTv3SnM2DvURmOMKnpu4peq/A
+         RimnzAO940w4govjGmLAontEnpQ9COJ4Q6/IX3j2lY3AJf+cEtdBGQyQnmL0YI904/j7
+         IZluS3Ct4v49RHyvh6gPFFRuLjUeTchJxDyngypPfifVGMLyRDg4b+T3vXaMAPG8/ViR
+         0FV5k2SJyaraSOmaKAsVPx+qlmforRG6l7bFivNkRqjtujcRc0PPcVCq53di3Uyvwisi
+         xCBw==
+X-Gm-Message-State: ABy/qLbKi7+BsasDe9Ct2M5ZK9CgUPTr75eB6Q5yfwq49cuWnY8Ti8Sv
+	m28ltfTUI9E6ss2sLQ4g1I/I+2LbiFj8dHd5O0/Rhw==
+X-Google-Smtp-Source: APBJJlEgE1uxMP2f69NVZLrCS+rHfDtJRXwfZVL8soW8mbRv6Wedca+8NVXPsYlAPQZNL5ync0XTMrABz9E4KzG8T7U=
+X-Received: by 2002:a9d:6302:0:b0:6b7:319d:281e with SMTP id
+ q2-20020a9d6302000000b006b7319d281emr4451824otk.19.1688700596054; Thu, 06 Jul
+ 2023 20:29:56 -0700 (PDT)
+MIME-Version: 1.0
+From: =?UTF-8?B?Tmd1eeG7hW4gUXVhbmcgVsWp?= <nqvu@vku.udn.vn>
+Date: Fri, 7 Jul 2023 10:29:45 +0700
+Message-ID: <CABFJA=ivjWLWrJiY9fj6-aS_NE-nv6UpqB_H1HpPOUBFxRv8kQ@mail.gmail.com>
+Subject: =?UTF-8?B?QsOgaSBiw6FvIENJVEEyMDIzIMSRxrDhu6NjIGzhu7FhIGNo4buNbiDEkcSDbmcgdHLDqg==?=
+	=?UTF-8?B?biBjaHV5w6puIHNhbiBj4bunYSBU4bqhcCBjaMOtIFRUJlRU?=
+To: quan10.work@gmail.com, ngovanuc.1508@gmail.com, haodophuc@gmail.com, 
+	nguyenvan@dut.udn.vn
+Cc: Nguyen Quang Hung <nguyenquanghung@mic.gov.vn>
+Content-Type: multipart/alternative; boundary="00000000000029011705ffdd3fb6"
+
+--00000000000029011705ffdd3fb6
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: base64
+
+S8OtbmggZ+G7rWkgdMOhYyBnaeG6oyBiw6BpIGLDoW8gSUQgMTQ2IC0gSW9UIEJvdG5ldCBEZXRl
+Y3Rpb24gYW5kIENsYXNzaWZpY2F0aW9uDQp1c2luZyBNYWNoaW5lIExlYXJuaW5nIEFsZ29yaXRo
+bXMgZm9yIEltcHJvdmVkIEN5YmVyc2VjdXJpdHkNCg0KQ2jDum5nIHTDtGkgdnVpIG3hu6tuZyB0
+aMO0bmcgYsOhbyBy4bqxbmcgYsOgaSBiw6FvIGPhu6dhIG5ow7NtIHTDoWMgZ2nhuqMgxJHDoyDE
+kcaw4bujYyBCYW4gYmnDqm4NCnThuq1wIENodXnDqm4gc2FuIHPhu5EgxJHhurdjIGJp4buHdCBk
+w6BuaCBjaG8gQ0lUQSAyMDIzIGPhu6dhIFThuqFwIGNow60gVGjDtG5nIHRpbiB2w6ANClRydXnh
+u4FuIHRow7RuZyAoQuG7mSBUaMO0bmcgdGluIHbDoCBUcnV54buBbiB0aMO0bmcpIHhlbSB4w6l0
+IHBo4bqjbiBiaeG7h24gdGjDqm0gxJHhu4MgbOG7sWENCmNo4buNbiDEkcSDbmcgdHLDqm4gQ2h1
+ecOqbiBzYW4gxJHhurdjIGJp4buHdCBkw6BuaCBjaG8gQ0lUQSAyMDIzIGPhu6dhIFThuqFwIGNo
+aSBUVCZUVC4gxJDhu4MNCsSR4bqjbSBi4bqjbyBiw6BvIGLDoW8gc+G6vSDEkcaw4bujYyB4deG6
+pXQgYuG6o24gdHJvbmcgc+G7kSBDaHV5w6puIHNhbiDEkeG6t2MgYmnhu4d0IG7DoHksIG5ow7Nt
+IHTDoWMNCmdp4bqjIGPhuqduIHRo4buxYyBoaeG7h24gY8OhYyBu4buZaSBkdW5nIHNhdToNCg0K
+DQoNCjEuIFjDoWMgbmjhuq1uIMSR4buTbmcgw70gKGLhurFuZyBjw6FjaCBwaOG6o24gaOG7k2kg
+cmVwbHkgYWxsIHRow7RuZyBxdWEgZW1haWwgbsOgeSB0cm9uZw0KaMO0bSBuYXksIDI3LzYvMjAy
+MykgxJHhu4MgYsOgaSBiw6FvIHPhur0geHXhuqV0IGLhuqNuIHRyw6puIHPhu5EgQ2h1ecOqbiBz
+YW4gxJHhurdjIGJp4buHdCwNCsSRaeG7gXUgbsOgeSDEkeG7k25nIG5naMSpYSBy4bqxbmcgYsOg
+aSBiw6FvIHPhur0ga2jDtG5nIMSRxrDhu6NjIMSRxINuZyB0csOqbiBL4bu3IHnhur91IGPhu6dh
+IENJVEENCjIwMjMgxJHhu4MgxJHhuqNtIGLhuqNvIHRpw6p1IGNow60gbeG7mXQgYsOgaSBiw6Fv
+IGtow7RuZyB4deG6pXQgYuG6o24g4bufIDIgbsahaS4NCg0KMi4gUsOgIHNvw6F0IHbDoCBoaeG7
+h3UgY2jhu4luaCBiw6BpIGLDoW8gdGhlbyDDvSBraeG6v24gY+G7p2EgQmFuIGJpw6puIHThuq1w
+IENodXnDqm4gc2FuDQooeGVtIG7hu5lpIGR1bmcgcGjhuqNuIGJp4buHbiBrw6htIHBow61hIGTG
+sOG7m2kpLiBOZ2/DoGkgcmEsIHZ1aSBsw7JuZyDEkeG7i25oIGThuqFuZyBiw6BpDQpiw6FvIHRo
+ZW8gcXV5IMSR4buLbmggY+G7p2EgVOG6oXAgY2jDrSBUaMO0bmcgdGluIHbDoCB0cnV54buBbiB0
+aMO0bmcuDQoNCjMuIMSQ4buLbmggZOG6oW5nIHbDoCBob8OgbiB0aGnhu4duIGLDoGkgYsOhbyB0
+aGVvIEZvcm0gTGF0ZXgg4bufIGxpbmsgc2F1Og0KDQogaHR0cHM6Ly93d3cuZHJvcGJveC5jb20v
+c2gvZzdsNHJteWsxem05MzNjL0FBQXFlaXh1WGF0ZTM1dXVhbWtGVjlkWWE/ZGw9MA0KDQoNCk7h
+ur91IHTDoWMgZ2nhuqMgxJHhu5NuZyDDvSwgc2F1IGtoaSBwaOG6o24gaOG7k2kgZW1haWwgbsOg
+eSwgdnVpIGzDsm5nIGxpw6puIGjhu4cgdHLhu7FjIHRp4bq/cA0KVFMuIE5ndXnhu4VuIFF1YW5n
+IEjGsG5nLCDEkFQ6IDA5NC45NzkwLjExNzsgaHR0cHM6Ly9pY3RtYWcudm4gLCBlbWFpbDoNCm5n
+dXllbnF1YW5naHVuZ0BtaWMuZ292LnZuICwgbMOgIFRoxrAga8O9IFThuqFwIGNow60gVGjDtG5n
+IHRpbiB2w6AgVHJ1eeG7gW4gdGjDtG5nIMSR4buDDQrEkcaw4bujYyBoxrDhu5tuZyBk4bqrbiBj
+w6FjIHF1eSB0csOsbmggdGnhur9wIHRoZW8gbmjhurFtIHh14bqldCBi4bqjbiBiw6BpIGLDoW8g
+dHLDqm4gc+G7kSBDaHV5w6puDQpzYW4gxJHhurdjIGJp4buHdCBj4bunYSBU4bqhcCBjaMOtLg0K
+DQoNClRow7RuZyB0aW4gduG7gSBDaHV5w6puIHNhbiBj4bunYSBU4bqhcCBjaMOtIFRUJlRUIGPD
+syDhu58gbGluayBzYXU6DQoNCkPDoWMgY8O0bmcgdHLDrG5oIG5naGnDqm4gY+G7qXUsIHBow6F0
+IHRyaeG7g24gdsOgIOG7qW5nIGThu6VuZyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiB2w6ANClRy
+dXnhu4FuIHRow7RuZyAoaWN0bWFnLnZuKSA8aHR0cHM6Ly9pY3RtYWcudm4vY250dC10dD4NCg0K
+DQpUcsOibiB0cuG7jW5nIGPDoW0gxqFuIHbDoCBjaMO6YyBt4burbmcgbmjDs20gdMOhYyBnaeG6
+oy4NCg0KVE0uIEJUQyBDSVRBIDIwMjMNCg0KVFMuIE5ndXnhu4VuIFF1YW5nIFbFqQ0KLS0tLQ0K
+UmV2aWV3ZXIgQ29tbWVudHNGb3IgYXV0aG9yIGFuZCBlZGl0b3INCg0KQsOgaSBiw6FvIMSR4buB
+IGPhuq1wIHThu5tpIHRo4butIG5naGnhu4dtIG3hu5l0IHPhu5EgcGjGsMahbmcgcGjDoXAgaOG7
+jWMgbcOheSBuaMawIERlY2lzaW9uIHRyZWUsDQpSYW5kb20gZm9yZXN0LCBLTk4sIFhHQm9vc3Qg
+xJHhu4MgcGjDom4gbG/huqFpIG3hu5l0IHPhu5EgZOG6oW5nIElvVCBCb3RuZXQgduG7m2kgYuG7
+mSBk4buvDQpsaeG7h3UgdGjhu60gbmdoaeG7h20gSW9ULTIzLiBCw6BpIGLDoW8gY8WpbmcgxJHG
+sGEgcmEgc28gc8OhbmggY8OhYyBr4bq/dCBxdeG6oyB0aOG7rSBuZ2hp4buHbQ0KduG7gSBuxINu
+ZyBs4buxYyBwaMOibiBsb+G6oWkgY+G7p2EgY8OhYyBi4buZIHBow6JuIGxv4bqhaSBuw7NpIHRy
+w6puIHbhu5tpIGLhu5kgZOG7ryBsaeG7h3UgSW9ULTIzLg0KQsOgaSBiw6FvIGPhuqduIHBo4bqj
+aSBjaOG7iW5oIHPhu61hIG3hu5l0IHPhu5EgxJFp4buDbSBuaMawIHNhdToNCg0KLSBD4bqnbiBt
+w7QgdOG6oyBjw6FjIMSR4bq3YyB0csawbmcgY+G7p2EgSW9UIEJvdG5ldC4gWMOhIMSR4bq3YyB0
+csawbmcgY+G7p2EgZOG7ryBsaeG7h3UgY8WpbmcgY+G6p24NCmto4bqjbyBzw6F0IHbDoCBwaMOi
+biB0w61jaC4NCg0KLSBRdcOhIHRyw6xuaCB0csOtY2ggY2jhu41uIMSR4bq3YyB0csawbmcgxJHh
+u4MgxJHGsGEgdsOgbyBjw6FjIGLhu5kgcGjDom4gbG/huqFpLiBLaGkgeMOieSBk4buxbmcNCmjh
+u4cgdGjhu5FuZyB0aOG6rXQgduG7m2kgZOG7ryBsaeG7h3UgdHLhu7FjIHR1eeG6v24gdGjDrCBx
+dcOhIHRyw6xuaCB0aHUgdGjhuq1wLCB44butIGzDvSBk4buvIGxp4buHdQ0KdsOgIGjhu4cgdGjh
+u5FuZyBwaMOhdCBoaeG7h24gc+G6vSBsw6BtIHZp4buHYyBuaMawIHRo4bq/IG7DoG8gPw0KDQot
+IEThu68gbGnhu4d1IGPhuqduIMSRxrDhu6NjIHBow6JuIHTDrWNoIGvhu7kgY8OgbmcuIE5o4buv
+bmcgduG6pW4gxJHhu4EgbmjGsDogZOG7ryBsaeG7h3UgdGjhu60gbmdoaeG7h20NCmPDsyBi4buL
+IHRoaeG6v3Uga2jDtG5nLCBk4buvIGxp4buHdSBjw7MgYuG7iyBt4bqldCBjw6JuIGLhurFuZyBo
+YXkga2jDtG5nLCBjw7Mgbmdv4bqhaSBsYWkNCmtow7RuZywgY8WpbmcgY+G6p24gxJHGsOG7o2Mg
+eGVtIHjDqXQga+G7uS4NCg0KLSBOaOG7r25nIMSRw6FuaCBnacOhIGvhur90IHF14bqjIHRo4but
+IG5naGnhu4dtIHbDoCBuaOG7r25nIGvhur90IGx14bqtbiBjxaluZyBuaMawIGto4bqjIG7Eg25n
+DQpwaMOhdCB0cmnhu4NuIGPDoWMga+G6v3QgcXXhuqMgdGh1IMSRxrDhu6NjIGPhuqduIMSRxrDh
+u6NjIHBow6JuIHTDrWNoIGvhu7kgaMahbi4NCg0KLSBDw6FjIGjDrG5oIHbhur0gY+G6p24gcsOg
+IHNvw6F0IGzhuqFpLCB2w60gZOG7pSBuaMawIGjDrG5oIDEuDQoNCi0gQ+G6p24gcsOgIHNvw6F0
+IGzhuqFpIHRp4bq/bmcgQW5oLg0KDQpOaMOsbiBjaHVuZywgxJHhu4MgY8OzIHRo4buDIMSRxrDh
+u6NjIMSRxINuZyBj4bqnbiBjaOG7iW5oIHPhu61hIGLDoGkgYsOhbyBj4bqpbiB0aOG6rW4gdsOg
+IHBow6JuIHTDrWNoDQpzw6J1IHPhuq9jIGjGoW4uDQoiDQoNCk7hur91IG5ow7NtIHTDoWMgZ2nh
+uqMgY8OzIHRo4buDIGNhbSBr4bq/dCBz4butYSBiw6BpIMSRw6FwIOG7qW5nIH43MCUgecOqdSBj
+4bqndSBwaOG6o24gYmnhu4duIOG7nw0KdHLDqm4gdGjDrCBiw6BpIGLDoW8gY8OzIHRo4buDIMSR
+xrDhu6NjIGNo4bqlcCBuaOG6rW4gxJFhbmcgdHJvbmcgQ0h1ecOqbiBzYW4gY+G7p2EgVOG6oXAg
+Y2jDrS4NCg0KDQotLS0tDQotLSANCkRyLiBRdWFuZy1WdSBOR1VZRU4NCkhlYWQsIERlcGFydG1l
+bnQgb2YgU2NpZW5jZSwgVGVjaG5vbG9neSBhbmQgSW50ZXJuYXRpb25hbCBDb29wZXJhdGlvbg0K
+VmlldG5hbSAtIEtvcmVhIFVuaXZlcnNpdHkgb2YgSW5mb3JtYXRpb24gYW5kIENvbW11bmljYXRp
+b24gVGVjaG5vbG9neQ0K
+--00000000000029011705ffdd3fb6
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr">K=C3=AD=
+nh g=E1=BB=ADi t=C3=A1c gi=E1=BA=A3 b=C3=A0i b=C3=A1o ID 146 -=C2=A0<span s=
+tyle=3D"color:rgb(0,0,0);font-family:&quot;Lucida Grande&quot;,Verdana,Aria=
+l,Helvetica,sans-serif;font-size:13px;background-color:rgb(240,254,255)">Io=
+T Botnet Detection and Classification using Machine Learning Algorithms for=
+ Improved Cybersecurity</span></div><div dir=3D"ltr"><span style=3D"font-fa=
+mily:&quot;Times New Roman&quot;,serif;font-size:12pt"><br></span></div><di=
+v dir=3D"ltr"><span style=3D"font-family:&quot;Times New Roman&quot;,serif;=
+font-size:12pt">Ch=C3=BAng t=C3=B4i vui m=E1=BB=ABng=C2=A0th=C3=B4ng=C2=A0b=
+=C3=A1o r=E1=BA=B1ng b=C3=A0i b=C3=A1o c=E1=BB=A7a nh=C3=B3m t=C3=A1c gi=E1=
+=BA=A3 =C4=91=C3=A3 =C4=91=C6=B0=E1=BB=A3c Ban bi=C3=AAn t=E1=BA=ADp Chuy=
+=C3=AAn san s=E1=BB=91 =C4=91=E1=BA=B7c bi=E1=BB=87t d=C3=A0nh cho CITA 202=
+3 c=E1=BB=A7a=C2=A0T=E1=BA=A1p=C2=A0ch=C3=AD=C2=A0Th=C3=B4ng=C2=A0tin=C2=A0=
+v=C3=A0 Truy=E1=BB=81n=C2=A0th=C3=B4ng=C2=A0(B=E1=BB=99=C2=A0Th=C3=B4ng=C2=
+=A0tin=C2=A0v=C3=A0 Truy=E1=BB=81n=C2=A0th=C3=B4ng) xem x=C3=A9t ph=E1=BA=
+=A3n bi=E1=BB=87n th=C3=AAm =C4=91=E1=BB=83 l=E1=BB=B1a ch=E1=BB=8Dn =C4=91=
+=C4=83ng tr=C3=AAn Chuy=C3=AAn san =C4=91=E1=BA=B7c bi=E1=BB=87t d=C3=A0nh =
+cho CITA 2023 c=E1=BB=A7a T=E1=BA=A1p chi TT&amp;TT. =C4=90=E1=BB=83 =C4=91=
+=E1=BA=A3m b=E1=BA=A3o b=C3=A0o b=C3=A1o s=E1=BA=BD =C4=91=C6=B0=E1=BB=A3c =
+xu=E1=BA=A5t b=E1=BA=A3n trong s=E1=BB=91 Chuy=C3=AAn san =C4=91=E1=BA=B7c =
+bi=E1=BB=87t n=C3=A0y, nh=C3=B3m t=C3=A1c gi=E1=BA=A3 c=E1=BA=A7n th=E1=BB=
+=B1c hi=E1=BB=87n c=C3=A1c n=E1=BB=99i dung sau:</span><div><p class=3D"Mso=
+Normal" style=3D"margin-bottom:0in;line-height:normal"><span style=3D"font-=
+size:12pt;font-family:&quot;Times New Roman&quot;,serif">=C2=A0</span></p><=
+p class=3D"MsoNormal" style=3D"margin-bottom:0in;line-height:normal"><span =
+style=3D"font-size:12pt;font-family:&quot;Times New Roman&quot;,serif">1. X=
+=C3=A1c nh=E1=BA=ADn =C4=91=E1=BB=93ng =C3=BD (b=E1=BA=B1ng c=C3=A1ch ph=E1=
+=BA=A3n h=E1=BB=93i reply all th=C3=B4ng=C2=A0qua email n=C3=A0y trong h=C3=
+=B4m nay, 27/6/2023) =C4=91=E1=BB=83 b=C3=A0i b=C3=A1o s=E1=BA=BD xu=E1=BA=
+=A5t b=E1=BA=A3n tr=C3=AAn s=E1=BB=91 Chuy=C3=AAn san =C4=91=E1=BA=B7c bi=
+=E1=BB=87t, =C4=91i=E1=BB=81u n=C3=A0y =C4=91=E1=BB=93ng ngh=C4=A9a r=E1=BA=
+=B1ng b=C3=A0i b=C3=A1o s=E1=BA=BD kh=C3=B4ng =C4=91=C6=B0=E1=BB=A3c =C4=91=
+=C4=83ng tr=C3=AAn K=E1=BB=B7 y=E1=BA=BFu c=E1=BB=A7a CITA 2023 =C4=91=E1=
+=BB=83 =C4=91=E1=BA=A3m b=E1=BA=A3o ti=C3=AAu=C2=A0ch=C3=AD=C2=A0m=E1=BB=99=
+t b=C3=A0i b=C3=A1o kh=C3=B4ng xu=E1=BA=A5t b=E1=BA=A3n =E1=BB=9F 2 n=C6=A1=
+i.</span></p><p class=3D"MsoNormal" style=3D"margin-bottom:0in;line-height:=
+normal"><span style=3D"font-size:12pt;font-family:&quot;Times New Roman&quo=
+t;,serif">2. R=C3=A0 so=C3=A1t v=C3=A0 hi=E1=BB=87u ch=E1=BB=89nh b=C3=A0i =
+b=C3=A1o theo =C3=BD ki=E1=BA=BFn c=E1=BB=A7a Ban bi=C3=AAn t=E1=BA=ADp Chu=
+y=C3=AAn san (xem n=E1=BB=99i dung ph=E1=BA=A3n bi=E1=BB=87n k=C3=A8m ph=C3=
+=ADa d=C6=B0=E1=BB=9Bi). Ngo=C3=A0i ra, vui l=C3=B2ng =C4=91=E1=BB=8Bnh d=
+=E1=BA=A1ng b=C3=A0i b=C3=A1o theo quy =C4=91=E1=BB=8Bnh c=E1=BB=A7a T=E1=
+=BA=A1p ch=C3=AD Th=C3=B4ng tin v=C3=A0 truy=E1=BB=81n th=C3=B4ng.</span></=
+p><p class=3D"MsoNormal" style=3D"margin-bottom:0in;line-height:normal"><sp=
+an style=3D"font-size:12pt;font-family:&quot;Times New Roman&quot;,serif">3=
+. =C4=90=E1=BB=8Bnh d=E1=BA=A1ng v=C3=A0 ho=C3=A0n thi=E1=BB=87n b=C3=A0i b=
+=C3=A1o theo Form Latex =E1=BB=9F link sau:</span></p><p class=3D"MsoNormal=
+" style=3D"margin-bottom:0in;line-height:normal"><span style=3D"color:rgb(0=
+,0,0);font-family:Calibri,Helvetica,sans-serif;font-size:16px">=C2=A0</span=
+><a href=3D"https://www.dropbox.com/sh/g7l4rmyk1zm933c/AAAqeixuXate35uuamkF=
+V9dYa?dl=3D0" id=3D"m_-7935655378864885383m_-5448920834062039784LPlnk881638=
+" target=3D"_blank" style=3D"font-family:Calibri,Helvetica,sans-serif;font-=
+size:16px">https://www.dropbox.com/sh/g7l4rmyk1zm933c/AAAqeixuXate35uuamkFV=
+9dYa?dl=3D0</a><span style=3D"font-size:12pt;font-family:&quot;Times New Ro=
+man&quot;,serif"><br></span></p><p class=3D"MsoNormal" style=3D"margin-bott=
+om:0in;line-height:normal"><span style=3D"font-size:12pt;font-family:&quot;=
+Times New Roman&quot;,serif"><br></span></p><p class=3D"MsoNormal" style=3D=
+"margin-bottom:0in;line-height:normal"><span style=3D"font-size:12pt;font-f=
+amily:&quot;Times New Roman&quot;,serif">N=E1=BA=BFu t=C3=A1c gi=E1=BA=A3 =
+=C4=91=E1=BB=93ng =C3=BD, sau khi ph=E1=BA=A3n h=E1=BB=93i email n=C3=A0y, =
+vui l=C3=B2ng li=C3=AAn h=E1=BB=87 tr=E1=BB=B1c ti=E1=BA=BFp TS. Nguy=E1=BB=
+=85n Quang H=C6=B0ng,=C2=A0</span><span style=3D"color:rgb(0,0,0);font-fami=
+ly:Calibri,Helvetica,sans-serif,EmojiFont,&quot;Apple Color Emoji&quot;,&qu=
+ot;Segoe UI Emoji&quot;,NotoColorEmoji,&quot;Segoe UI Symbol&quot;,&quot;An=
+droid Emoji&quot;,EmojiSymbols;font-size:16px">=C4=90T: 094.9790.117;=C2=A0=
+</span><a href=3D"https://ictmag.vn/" title=3D"https://ictmag.vn/ Ctrl+B=E1=
+=BA=A5m ho=E1=BA=B7c g=C3=B5 nh=E1=BA=B9 =C4=91=E1=BB=83 theo d=C3=B5i n=E1=
+=BB=91i k=E1=BA=BFt" id=3D"m_-7935655378864885383m_-5448920834062039784LPNo=
+LP" target=3D"_blank" style=3D"font-family:Calibri,Helvetica,sans-serif,Emo=
+jiFont,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,NotoColorEm=
+oji,&quot;Segoe UI Symbol&quot;,&quot;Android Emoji&quot;,EmojiSymbols;font=
+-size:16px">https://ictmag.vn</a><span style=3D"color:rgb(0,0,0);font-famil=
+y:Calibri,Helvetica,sans-serif,EmojiFont,&quot;Apple Color Emoji&quot;,&quo=
+t;Segoe UI Emoji&quot;,NotoColorEmoji,&quot;Segoe UI Symbol&quot;,&quot;And=
+roid Emoji&quot;,EmojiSymbols;font-size:16px">=C2=A0,=C2=A0</span><span sty=
+le=3D"font-size:12pt;font-family:&quot;Times New Roman&quot;,serif">email:=
+=C2=A0</span><span style=3D"color:rgb(94,94,94);font-family:&quot;Google Sa=
+ns&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:14px"><a h=
+ref=3D"mailto:nguyenquanghung@mic.gov.vn" target=3D"_blank">nguyenquanghung=
+@mic.gov.vn</a></span><span style=3D"font-family:&quot;Times New Roman&quot=
+;,serif;font-size:12pt">=C2=A0, l=C3=A0 Th=C6=B0 k=C3=BD T=E1=BA=A1p ch=C3=
+=AD Th=C3=B4ng tin v=C3=A0 Truy=E1=BB=81n th=C3=B4ng =C4=91=E1=BB=83 =C4=91=
+=C6=B0=E1=BB=A3c h=C6=B0=E1=BB=9Bng d=E1=BA=ABn c=C3=A1c quy tr=C3=ACnh ti=
+=E1=BA=BFp theo nh=E1=BA=B1m xu=E1=BA=A5t b=E1=BA=A3n b=C3=A0i b=C3=A1o tr=
+=C3=AAn s=E1=BB=91 Chuy=C3=AAn san =C4=91=E1=BA=B7c bi=E1=BB=87t c=E1=BB=A7=
+a T=E1=BA=A1p ch=C3=AD.</span></p><p class=3D"MsoNormal" style=3D"margin-bo=
+ttom:0in;line-height:normal"><span style=3D"font-size:12pt;font-family:&quo=
+t;Times New Roman&quot;,serif"><br></span></p><p class=3D"MsoNormal" style=
+=3D"margin-bottom:0in;line-height:normal"><span style=3D"font-size:12pt;fon=
+t-family:&quot;Times New Roman&quot;,serif">Th=C3=B4ng tin v=E1=BB=81 Chuy=
+=C3=AAn san c=E1=BB=A7a T=E1=BA=A1p ch=C3=AD TT&amp;TT c=C3=B3 =E1=BB=9F li=
+nk sau:</span></p><p class=3D"MsoNormal" style=3D"margin-bottom:0in;line-he=
+ight:normal"><a href=3D"https://ictmag.vn/cntt-tt" target=3D"_blank">C=C3=
+=A1c c=C3=B4ng tr=C3=ACnh nghi=C3=AAn c=E1=BB=A9u, ph=C3=A1t tri=E1=BB=83n =
+v=C3=A0 =E1=BB=A9ng d=E1=BB=A5ng C=C3=B4ng ngh=E1=BB=87 Th=C3=B4ng tin v=C3=
+=A0 Truy=E1=BB=81n th=C3=B4ng (ictmag.vn)</a><span style=3D"font-size:12pt;=
+font-family:&quot;Times New Roman&quot;,serif"><br></span></p><p class=3D"M=
+soNormal" style=3D"margin-bottom:0in;line-height:normal"><span style=3D"fon=
+t-size:12pt;font-family:&quot;Times New Roman&quot;,serif"><br></span></p><=
+p class=3D"MsoNormal" style=3D"margin-bottom:0in;line-height:normal"><span =
+style=3D"font-size:12pt;font-family:&quot;Times New Roman&quot;,serif">Tr=
+=C3=A2n tr=E1=BB=8Dng c=C3=A1m =C6=A1n v=C3=A0 ch=C3=BAc m=E1=BB=ABng nh=C3=
+=B3m t=C3=A1c gi=E1=BA=A3.</span></p><p class=3D"MsoNormal" style=3D"margin=
+-bottom:0in;line-height:normal"><span style=3D"font-size:12pt;font-family:&=
+quot;Times New Roman&quot;,serif">TM. BTC CITA 2023</span></p><p class=3D"M=
+soNormal" style=3D"margin-bottom:0in;line-height:normal"><span style=3D"fon=
+t-size:12pt;font-family:&quot;Times New Roman&quot;,serif">TS. Nguy=E1=BB=
+=85n Quang V=C5=A9</span></p></div><div>----</div><div><h3 style=3D"box-siz=
+ing:border-box;color:rgba(0,0,0,0.84);font-family:&quot;Noto Sans&quot;,-ap=
+ple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,Oxygen-Sans,Ubunt=
+u,Cantarell,&quot;Helvetica Neue&quot;,sans-serif">Reviewer Comments</h3><h=
+4 style=3D"box-sizing:border-box;color:rgba(0,0,0,0.84);font-family:&quot;N=
+oto Sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto=
+,Oxygen-Sans,Ubuntu,Cantarell,&quot;Helvetica Neue&quot;,sans-serif;font-si=
+ze:14px">For author and editor</h4><div id=3D"m_2856022556270199808revealMo=
+re-1064a75fbca0af8" style=3D"color:rgb(0,0,0);font-family:Calibri,Helvetica=
+,sans-serif;font-size:16px;box-sizing:border-box"><p style=3D"margin-top:0p=
+x;margin-bottom:0px;box-sizing:border-box">B=C3=A0i b=C3=A1o =C4=91=E1=BB=
+=81 c=E1=BA=ADp t=E1=BB=9Bi th=E1=BB=AD nghi=E1=BB=87m m=E1=BB=99t s=E1=BB=
+=91 ph=C6=B0=C6=A1ng ph=C3=A1p h=E1=BB=8Dc m=C3=A1y nh=C6=B0 Decision tree,=
+ Random forest, KNN, XGBoost =C4=91=E1=BB=83 ph=C3=A2n lo=E1=BA=A1i m=E1=BB=
+=99t s=E1=BB=91 d=E1=BA=A1ng IoT Botnet v=E1=BB=9Bi b=E1=BB=99 d=E1=BB=AF l=
+i=E1=BB=87u th=E1=BB=AD nghi=E1=BB=87m IoT-23. B=C3=A0i b=C3=A1o c=C5=A9ng =
+=C4=91=C6=B0a ra so s=C3=A1nh c=C3=A1c k=E1=BA=BFt qu=E1=BA=A3 th=E1=BB=AD =
+nghi=E1=BB=87m v=E1=BB=81 n=C4=83ng l=E1=BB=B1c ph=C3=A2n lo=E1=BA=A1i c=E1=
+=BB=A7a c=C3=A1c b=E1=BB=99 ph=C3=A2n lo=E1=BA=A1i n=C3=B3i tr=C3=AAn v=E1=
+=BB=9Bi b=E1=BB=99 d=E1=BB=AF li=E1=BB=87u IoT-23. B=C3=A0i b=C3=A1o c=E1=
+=BA=A7n ph=E1=BA=A3i ch=E1=BB=89nh s=E1=BB=ADa m=E1=BB=99t s=E1=BB=91 =C4=
+=91i=E1=BB=83m nh=C6=B0 sau:</p><p style=3D"margin-top:0px;margin-bottom:0p=
+x;box-sizing:border-box">- C=E1=BA=A7n m=C3=B4 t=E1=BA=A3 c=C3=A1c =C4=91=
+=E1=BA=B7c tr=C6=B0ng c=E1=BB=A7a IoT Botnet. X=C3=A1 =C4=91=E1=BA=B7c tr=
+=C6=B0ng c=E1=BB=A7a d=E1=BB=AF li=E1=BB=87u c=C5=A9ng c=E1=BA=A7n kh=E1=BA=
+=A3o s=C3=A1t v=C3=A0 ph=C3=A2n t=C3=ADch.=C2=A0</p><p style=3D"margin-top:=
+0px;margin-bottom:0px;box-sizing:border-box">- Qu=C3=A1 tr=C3=ACnh tr=C3=AD=
+ch ch=E1=BB=8Dn =C4=91=E1=BA=B7c tr=C6=B0ng =C4=91=E1=BB=83 =C4=91=C6=B0a v=
+=C3=A0o c=C3=A1c b=E1=BB=99 ph=C3=A2n lo=E1=BA=A1i. Khi x=C3=A2y d=E1=BB=B1=
+ng h=E1=BB=87 th=E1=BB=91ng th=E1=BA=ADt v=E1=BB=9Bi d=E1=BB=AF li=E1=BB=87=
+u tr=E1=BB=B1c tuy=E1=BA=BFn th=C3=AC qu=C3=A1 tr=C3=ACnh thu th=E1=BA=ADp,=
+ x=E1=BB=AD l=C3=BD d=E1=BB=AF li=E1=BB=87u v=C3=A0 h=E1=BB=87 th=E1=BB=91n=
+g ph=C3=A1t hi=E1=BB=87n s=E1=BA=BD l=C3=A0m vi=E1=BB=87c nh=C6=B0 th=E1=BA=
+=BF n=C3=A0o ?</p><p style=3D"margin-top:0px;margin-bottom:0px;box-sizing:b=
+order-box">- D=E1=BB=AF li=E1=BB=87u c=E1=BA=A7n =C4=91=C6=B0=E1=BB=A3c ph=
+=C3=A2n t=C3=ADch k=E1=BB=B9 c=C3=A0ng. Nh=E1=BB=AFng v=E1=BA=A5n =C4=91=E1=
+=BB=81 nh=C6=B0: d=E1=BB=AF li=E1=BB=87u th=E1=BB=AD nghi=E1=BB=87m c=C3=B3=
+ b=E1=BB=8B thi=E1=BA=BFu kh=C3=B4ng, d=E1=BB=AF li=E1=BB=87u c=C3=B3 b=E1=
+=BB=8B m=E1=BA=A5t c=C3=A2n b=E1=BA=B1ng hay kh=C3=B4ng, c=C3=B3 ngo=E1=BA=
+=A1i lai kh=C3=B4ng, c=C5=A9ng c=E1=BA=A7n =C4=91=C6=B0=E1=BB=A3c xem x=C3=
+=A9t k=E1=BB=B9.</p><p style=3D"margin-top:0px;margin-bottom:0px;box-sizing=
+:border-box">- Nh=E1=BB=AFng =C4=91=C3=A1nh gi=C3=A1 k=E1=BA=BFt qu=E1=BA=
+=A3 th=E1=BB=AD nghi=E1=BB=87m v=C3=A0 nh=E1=BB=AFng k=E1=BA=BFt lu=E1=BA=
+=ADn c=C5=A9ng nh=C6=B0 kh=E1=BA=A3 n=C4=83ng ph=C3=A1t tri=E1=BB=83n c=C3=
+=A1c k=E1=BA=BFt qu=E1=BA=A3 thu =C4=91=C6=B0=E1=BB=A3c c=E1=BA=A7n =C4=91=
+=C6=B0=E1=BB=A3c ph=C3=A2n t=C3=ADch k=E1=BB=B9 h=C6=A1n.</p><p style=3D"ma=
+rgin-top:0px;margin-bottom:0px;box-sizing:border-box">- C=C3=A1c h=C3=ACnh =
+v=E1=BA=BD c=E1=BA=A7n r=C3=A0 so=C3=A1t l=E1=BA=A1i, v=C3=AD d=E1=BB=A5 nh=
+=C6=B0 h=C3=ACnh 1. =C2=A0</p><p style=3D"margin-top:0px;margin-bottom:0px;=
+box-sizing:border-box">- C=E1=BA=A7n r=C3=A0 so=C3=A1t l=E1=BA=A1i ti=E1=BA=
+=BFng Anh.</p><p style=3D"margin-top:0px;margin-bottom:0px;box-sizing:borde=
+r-box">Nh=C3=ACn chung, =C4=91=E1=BB=83 c=C3=B3 th=E1=BB=83 =C4=91=C6=B0=E1=
+=BB=A3c =C4=91=C4=83ng c=E1=BA=A7n ch=E1=BB=89nh s=E1=BB=ADa b=C3=A0i b=C3=
+=A1o c=E1=BA=A9n th=E1=BA=ADn v=C3=A0 ph=C3=A2n t=C3=ADch s=C3=A2u s=E1=BA=
+=AFc h=C6=A1n.</p></div><span style=3D"color:rgb(0,0,0);font-family:Calibri=
+,Helvetica,sans-serif;font-size:16px">&quot;</span><p style=3D"margin-top:0=
+px;margin-bottom:0px;color:rgb(0,0,0);font-family:Calibri,Helvetica,sans-se=
+rif;font-size:16px"></p><p style=3D"margin-top:0px;margin-bottom:0px;color:=
+rgb(0,0,0);font-family:Calibri,Helvetica,sans-serif;font-size:16px">N=E1=BA=
+=BFu nh=C3=B3m t=C3=A1c gi=E1=BA=A3 c=C3=B3 th=E1=BB=83 cam k=E1=BA=BFt s=
+=E1=BB=ADa b=C3=A0i =C4=91=C3=A1p =E1=BB=A9ng ~70% y=C3=AAu c=E1=BA=A7u ph=
+=E1=BA=A3n bi=E1=BB=87n =E1=BB=9F tr=C3=AAn th=C3=AC b=C3=A0i b=C3=A1o c=C3=
+=B3 th=E1=BB=83 =C4=91=C6=B0=E1=BB=A3c ch=E1=BA=A5p nh=E1=BA=ADn =C4=91ang =
+trong CHuy=C3=AAn san c=E1=BB=A7a T=E1=BA=A1p ch=C3=AD.<br></p><p style=3D"=
+margin-top:0px;margin-bottom:0px;color:rgb(0,0,0);font-family:Calibri,Helve=
+tica,sans-serif;font-size:16px"><br></p></div><div>----</div><span class=3D=
+"gmail_signature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_sign=
+ature"><div dir=3D"ltr"><div><font face=3D"arial, sans-serif">Dr. Quang-Vu =
+NGUYEN</font></div><div><font face=3D"arial, sans-serif"><span style=3D"lin=
+e-height:115%">Head, Department of Science, Technology and International Co=
+operation</span><br></font></div><div><font face=3D"arial, sans-serif">Viet=
+nam - Korea University of Information and Communication Technology</font></=
+div><div></div></div></div></div></div></div></div>
+
+--00000000000029011705ffdd3fb6--
